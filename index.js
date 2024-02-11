@@ -261,7 +261,7 @@ function markNumber(card, number) {
 
 					document.getElementById('markButton').disabled = true;
 
-					document.getElementById('winDisplayContainer').style.display = '';
+					document.getElementById('winDisplayContainer').style.display = 'flex';
 
 					document.getElementById('winDisplayContainer').style.backgroundColor = 'darkorange';
 
@@ -289,8 +289,8 @@ function markNumber(card, number) {
 					playerWins ++;
 
 					document.getElementById('markButton').disabled = true;
-					
-					document.getElementById('winDisplayContainer').style.display = '';
+
+					document.getElementById('winDisplayContainer').style.display = 'flex';
 
 					document.getElementById('winDisplayContainer').style.backgroundColor = 'darkorange';
 
@@ -317,7 +317,7 @@ function markNumber(card, number) {
 
 					document.getElementById('markButton').disabled = true;
 
-					document.getElementById('winDisplayContainer').style.display = '';
+					document.getElementById('winDisplayContainer').style.display = 'flex';
 
 					document.getElementById('winDisplayContainer').style.backgroundColor = 'darkorange';
 
@@ -345,7 +345,7 @@ function markNumber(card, number) {
 
 					document.getElementById('markButton').disabled = true;
 
-					document.getElementById('winDisplayContainer').style.display = '';
+					document.getElementById('winDisplayContainer').style.display = 'flex';
 
 					document.getElementById('winDisplayContainer').style.backgroundColor = 'darkorange';
 
