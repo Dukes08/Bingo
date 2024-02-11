@@ -189,7 +189,7 @@ button:disabled {
 #winDisplayContainer {
     width: 350px;
     height: 350px;
-    display: flex;
+    display: none;
     flex-direction: column;
     place-items: center;
     position: absolute;
