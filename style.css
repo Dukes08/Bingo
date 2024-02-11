@@ -187,6 +187,7 @@ button:disabled {
 
   
 #winDisplayContainer { 
+    display: none;
     width: 350px;
     height: 350px;
     display: flex;
