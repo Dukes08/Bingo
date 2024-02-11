@@ -1,40 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingo</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-    <section class="container-game">
-        <div class="user-input">
+<!DOCTYPE html> 
+<html lang="en"> 
 
-            <input type="text" placeholder="Player 1" id="player1">
-            <input type="text" placeholder="Player 2" id="player2">
-            <input type="text" placeholder="Player 3" id="player3">
-            <input type="text" placeholder="Player 4" id="player4">
-            <input type="text" placeholder="Board size (NxN)" id="boardSize">
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport"
+		content="width=device-width, 
+	initial-scale=1.0"> 
+	<title>Bingo Game</title> 
+	<link rel="stylesheet" href="../style.css"> 
+</head> 
 
-            <button class="primary-button play-game">
-                Play
+<body> 
+	<div class="bingo-container"> 
+		<h1>Bingo</h1> 
+
+		<section class="input-player-cards"> 
+			<input type="text" placeholder="ingrese jugar 1" class="input player1">
+            <input type="text" placeholder="ingrese jugar 2" class="input player2">
+            <input type="text" placeholder="ingrese jugar 3" class="input player3">
+            <input type="text" placeholder="ingrese jugar 4" class="input player4">
+            <input type="text" placeholder="tamaño de board" class="input boardSize">
+		</section> 
+
+
+        <section class="player-cards"> 
+            <h1 class="name1">Player 1's Card</h1> 
+            <div class="player-card card-grid1" id="player1Card"> 
+            </div> 
+            <h1 name2>Player 2's Card</h1> 
+            <div class="player-card card-grid2" id="player2Card"> 
+            </div> 
+            <h1 class="name3">Player 3's Card</h1> 
+            <div class="player-card card-grid3" id="player3Card"> 
+            </div> 
+            <h1 class="name4">Player 4's Card</h1> 
+            <div class="player-card card-grid4" id="player4Card"> 
+            </div> 
+        </section> 
+
+
+		<section class="controls"> 
+			<button id="startButton"> 
+				Start 
+			</button> 
+            <button class="newGame">
+                New Game
             </button>
+		</section> 
 
-        </div>
 
-        <section class="bingo">
-            <div class="counter-plays">
-            </div>
+		<section class="ramdomNumberContainer"> 
+			<div>
+				<p class="counterLabel">Trys</p>
+				<p id="counter">0</p>
+			</div>
 
-            <div class="bingo-boards">
-                <div class="cards">
+			<div class="display-ramdom-number-container">
+				<button id="markButton" disabled> 
+					Number 
+				</button> 
+				<p id="ramdomNumberZ"></p>
+			</div>
+		</section> 
 
-                </div>
-            </div>
-        </section>
 
-    </section>
-    <script src="../index.js"></script>
-</body>
+
+
+		<div id="winDisplayContainer" >
+			<div id="winDisplay"></div>
+			<button id="winDisplayButton" hidden>New Game</button>
+			<a href="./records.html">
+				<button id="winDisplayRecords" hidden>Records</button>
+			</a>
+		</div>
+
+		<!-- Display win message here -->
+
+
+
+	<script src="../index.js"></script> 
+</body> 
+
 </html>
-

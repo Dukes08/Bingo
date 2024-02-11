@@ -1,90 +1,317 @@
-*{
-    padding: 0;
+body{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    background-color: #252A34;
     font-family: sans-serif;
-    color: white;
+    background-color: #252A34;
 }
 
-
-/* Apartado de juego */
-
-.container-game{
+.bingo-container{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    position: relative;
-    align-content: center;
+    align-items: center;
 }
 
-.user-input{
+.bingo-container h1{
+    color: darkorange;
+}
+
+.input-player-cards{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items: center;
-    justify-items: center;
-    margin-top: 70px;
-
 }
 
-.user-input input{
+.input{
+    margin-top: 15px;
+    width: 200px;
+    border: solid darkorange 2px;
+    border-radius: 5px;
+    padding: 10px 10px
+}
+
+.boardSize{
+    margin-bottom: 15px;
+}
+
+
+.controls{
+    display: flex;
+    place-content: center;
     width: 300px;
-    height: 30px;
-    margin-top: 20px;
-    border: solid darkorange 1px;
+    height: 100px;
+}
+
+#startButton{
+    margin-top: 15px;
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
     border-radius: 10px;
-    padding: 12px 8px;
+    background-color: #252A34;
+    border: solid darkorange 2px;
+    color: darkorange;
 }
 
-.user-input input::placeholder{
-    color: gainsboro;
+#startButton:hover{
+    background-color: darkorange;
+    color: #252A34;
+}
+
+.newGame{
+    margin-top: 15px;
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #252A34;
+    border: solid darkorange 2px;
+    color: white;
+}
+
+.newGame:hover{
+    background-color: darkorange;
+    color: #252A34;
+}
+
+button:disabled { 
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+.ramdomNumberContainer{
+    margin-top: 10px;
+    display: flex;
+}
+
+.counterLabel{
+    color: darkorange;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#counter{
+    color: darkorange;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.display-ramdom-number-container{
+    display: flex;
+    place-items: center;
+    margin-left: 10px;
+    flex-direction: column;
+}
+
+#ramdomNumberZ{
+    color: darkorange;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+  
+#turnDisplay { 
+    font-weight: bold; 
+    color: #ff5e78; 
+    /* Light red text color */
+} 
+  
+/* Style individual numbers in the player cards */
+
+.player-cards { 
+    display: grid; 
+    justify-content: center; 
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px 1fr;
+    gap: 40px; 
+    margin-top: 20px; 
+} 
+  
+.player-card { 
+    background-color: #fff; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 5px; 
+    place-items: center;
+} 
+  
+.player-card h2 { 
+    color: #379683; 
+    /* Dark green text color */
+} 
+  
+
+.player-card div { 
+    background-color:#252A34; 
+    /* Dark green number background color */
+    color:darkorange; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold; 
+} 
+  
+.player-card div.marked { 
+    background-color: #ff5e78; 
+    /* Light red for marked numbers */
+} 
+
+#markButton{
+    margin-top: 15px;
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #252A34;
+    border: solid darkorange 2px;
+    color: darkorange;
+}
+
+#markButton:hover{
+    background-color: darkred;
+    border: solid black 3px;
+    color: white;
 }
 
 
+  
+#winDisplayContainer { 
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-weight: bold;  
+    
+    /* Light red text color */
+}
 
+#winDisplay{
+    padding-top: 30px;
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #252A34;
 
-/* Apartado de records */
+}
+
+#winDisplayButton{
+    margin-top: 15px;
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #252A34;
+    border: solid black 3px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: black solid 4px;
+    padding: 0;
+}
+
+#winDisplayButton:hover{
+    background-color: darkorange;
+    color: white;
+}
+
+#winDisplayRecords{
+    margin-top: 15px;
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #252A34;
+    border: solid black 3px;
+    color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: black solid 4px;
+    padding: 0;
+}
+
+#winDisplayRecords:hover{
+    background-color: darkorange;
+    color: white;
+}
+
+#recordTableContainer{
+    border: solid darkorange 4px;
+    color: darkorange;
+    font-size: 24px;
+
+}
+
 .container-records{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
     align-items: center;
-    justify-content: center;
-
 }
 
-.container-grid{
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(5, 50px);
-    justify-items: center;
-    align-items: center;
-    gap: 25px;
-
+#recordTableContainer{
+    margin-top: 100px;
+    width: 500px;
+    height: auto;
+    
 }
 
-.container-records h2{
-    color: darkorange;
+table{
+    width: 100%;
+    text-align: center;
 }
-.container-records p{
-    font-size: 24px;
-}
+
+
+
+/* th{
+    margin-left: 50px;
+} */
 
 .primary-button{
-    margin-top: 20px;
+    margin-top: 15px;
     width: 150px;
     height: 40px;
-    border-radius: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #252A34;
     border: solid darkorange 2px;
     color: darkorange;
 }
 
 .primary-button:hover{
     background-color: darkorange;
-    color: #252A34;
+    border: solid black 3px;
+    color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
